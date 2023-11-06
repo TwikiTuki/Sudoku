@@ -1,0 +1,102 @@
+table{
+	border-collapse: collapse;
+}
+
+h1{
+	text-align: center;
+}
+
+table td:nth-of-type(3n){
+	border-right: solid;
+}
+table tr:nth-of-type(3n){
+	border-bottom: solid;
+}
+table tr {
+	margin = 0;
+	padding = 0;
+}
+
+td{
+	padding: 5px;
+	border: solid 1px;
+}
+
+td, .inpcell
+{
+	width: 35px;
+	height: 35px;
+	font-size: 25px;
+	text-align: center;
+	cursor: default;
+}
+
+.inpcell:hover{
+	background-color: #aaffaa;
+}
+table tr td:nth-of-type(9){
+	border-right: solid 1px;
+}
+table tr:nth-of-type(9){
+	border-bottom: solid 1px;
+}
+.known, .highlighted{
+	background-color: #ccccff;
+	opacity: 1;
+}
+.sudoku_wrapper{
+	margin: auto;
+	padding: auto;
+	width: 315px;
+}
+
+button{
+	width: 40%;
+	height: 30px;
+	border: solid;
+	border-color: #88cc88;
+	background-color: #aaffaa;
+}
+button:hover{
+	background-color: white;
+}
+
+.buttons{
+	display: flex;
+	justify-content: space-between;
+}
+
+.solve{
+	margin-left: 0px;
+}
+.another{
+	margin-right: 0px;
+}
+
+.inpnum
+{
+	justify-content: space-between;
+	display: flex;
+}
+
+.buttons, .inpnum{
+	margin-top: 10px;
+}
+
+.inpnum div{
+	border: solid;
+	border-color: #88cc88;
+}
+
+.highlighted_inp{
+
+	background-color: #aaffaa;
+}
+.hidden{
+	display: none;
+}
+
+.error{
+	color: red;
+	margin-top: 5px;
+}
