@@ -29,11 +29,28 @@ function sdk_check(sudoku, cell)
 	return (1);
 }
 
+function sdk_check_initial_sudoku(sudoku)
+{
+	for (let i = 0; i < (N - 1); i++)
+	{
+		for (let j = 0; j < (N - 1); j++)
+		{
+			if (sudoku[i][j].value == 0) 
+				continue
+			else if (!sdk_check(sudoku, sudoku[i][j]))
+				return (0)
+		}
+	}
+	return (1);
+}
+
 export function sdk_solve(sudoku)
 {
 	var unknown = [];
 	var	i;
-
+	
+	if (!sdk_check_initial_sudoku(sudoku))
+		return (null)
 	for (let row=0; row < N; row++)
 	{
 		for (let col=0; col < N; col++)

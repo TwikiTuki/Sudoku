@@ -5,8 +5,6 @@ import {N, M} from "./sdk_utils.js"
 var global_customizing = false;
 var global_usr_inp = 0;
 
-console.log("whola shudoku");
-
 function cell_modify(value, td_cell, sdk_cell)
 {
 	sdk_cell.known = global_usr_inp != '0';
@@ -109,11 +107,9 @@ addEventListener("DOMContentLoaded", (event) => {
 		console.log("foreaching");
 		if (button.classList.contains("solve"))
 		{
-			console.log("sdaf");
 			return ;
 		}
 		button.addEventListener("click", (event) =>{
-			console.log("adding event");
 			error_text.classList.add("hidden");
 			header.classList.remove("error");
 		});	
@@ -134,6 +130,7 @@ addEventListener("DOMContentLoaded", (event) => {
 		global_customizing = false;
 		inp_num.style.display = "none";
 	});
+
 	var next_button = document.querySelector(".another");
 	next_button.addEventListener("click", (event) => {
 		let _sudoku = get_sudoku(++sudoku_ID);
@@ -142,6 +139,7 @@ addEventListener("DOMContentLoaded", (event) => {
 		global_customizing = false;
 		inp_num.style.display = "none";
 	});
+
 	var custom_button = document.querySelector(".custom");
 	custom_button.addEventListener("click", (event) => {
 		console.log("custom click");
