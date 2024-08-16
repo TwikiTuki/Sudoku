@@ -1,20 +1,13 @@
 body{
-	/*background-color:#269;*/
-	background-color: #e9e5d9;
-	background-image: linear-gradient(white 2px, transparent 2px),
+	background-color: #f2f2f1;
+	background-image: linear-gradient(white 4px, transparent 2px),
+	linear-gradient(90deg, white 4px, transparent 2px),
+	linear-gradient(white 2px, transparent 2px),
 	linear-gradient(90deg, white 2px, transparent 2px),
 	linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
 	linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
-	background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-	background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
-/*
-	background-image: linear-gradient(white 2px, transparent 2px),
-	linear-gradient(90deg, red 9px, transparent 20px),
-	linear-gradient(rgba(0,255,0,.3) 1px, transparent 1px),
-	linear-gradient(90deg, rgba(0,0,255,.3) 1px, transparent 1px);
-	background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-	background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
-*/
+	background-size: 180px 180px, 180px 180px, 60px 60px, 60px 60px, 20px 20px, 20px 20px;
+	background-position:-4px -4px, -4px -4px, -2px -2px, -2px -2px, -1px -1px, -1px -1px;
 }
 
 table{
@@ -23,6 +16,8 @@ table{
 
 h1{
 	text-align: center;
+	color: black;
+	
 }
 
 table td:nth-of-type(3n){
@@ -43,8 +38,8 @@ td{
 
 td, .inpcell
 {
-	width: 35px;
-	height: 35px;
+	width: 40px;
+	height: 40px;
 	font-size: 25px;
 	text-align: center;
 	cursor: default;
@@ -67,7 +62,7 @@ table tr:nth-of-type(9){
 .sudoku_wrapper{
 	margin: auto;
 	padding: auto;
-	width: 315px;
+	width: 450px;
 }
 
 button{

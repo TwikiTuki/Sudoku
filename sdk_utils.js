@@ -1,7 +1,7 @@
 export const N = 9;
 export const M = 3;
 
-function get_sudoku_str(sudoku_id)
+export function get_sudoku_str(sudoku_id)
 {
 	const sudokus = [
 		['070000043040009610800634900094052000358460020000800530080070091902100005007040802','679518243543729618821634957794352186358461729216897534485276391962183475137945862'],
@@ -25,6 +25,20 @@ function get_sudoku_str(sudoku_id)
 		['087002010204017003006800705508001000640008100002050670439180007020900030700023091','987532416254617983316849725578261349643798152192354678439185267821976534765423891']
 	];
 	return sudokus[sudoku_id % sudokus.length];
+}
+
+export function sdk_blank()
+{
+	let sudoku
+	sudoku = []
+		
+	for (let i = 0; i < N; i++)
+	{
+		sudoku.push([])
+		for (let j =0; j < N; j++)
+			sudoku[i][j] = 0
+	}
+	return (sudoku)
 }
 
 export function sdk_copy(sdk_res, sdk_inp)
@@ -64,7 +78,7 @@ export function to_table(sudoku_str)
 
 export function to_str(sudoku)
 {
-	sudoku_str = "";
+	let sudoku_str = "";
 	for (let row = 0; row < N; row++)
 	{
 		for (let col = 0; col < N; col++)

@@ -1,4 +1,4 @@
-import {sdk_copy, get_sudoku, to_str} from "./sdk_utils.js"
+import {sdk_copy, get_sudoku, get_sudoku_str, to_str, to_table} from "./sdk_utils.js"
 import {sdk_solve} from "./sdk_solve.js"
 import {N, M} from "./sdk_utils.js"
 
@@ -88,9 +88,9 @@ function generate_input(inpnum)
 	}
 }
 
-var sudoku_ID = 0;
-var sudoku = get_sudoku(sudoku_ID);
 addEventListener("DOMContentLoaded", (event) => {
+	var sudoku_ID = 0;
+	var sudoku = get_sudoku(sudoku_ID);
 	console.log("Hellow sudoku");
 	var inp_num = document.querySelector(".inpnum");
 	let html_table = document.querySelector("table");
@@ -148,3 +148,41 @@ addEventListener("DOMContentLoaded", (event) => {
 	});
 });
 
+
+
+
+
+function test_solve(sudoku_str)
+{
+	let sudoku = to_table(sudoku_str)
+	console.log("loaded: ", sudoku)
+	sdk_solve(sudoku)
+	let result_str = to_str(sudoku)
+	if (result_str == sudoku_str[1])
+	{
+		console.log("OK Sudoku: ", sudoku_str)
+	}
+	else 
+	{
+		console.log("KO Sudoku: ", sudoku_str)
+		console.log("Result: ", result_str)
+		console.log("Expected: ", sudoku_str[1])
+	}
+	console.log("- - - - - - - - - - - - - - - - -");
+	
+	return (result_str == sudoku_str[1])
+}
+
+function test_solve_all(total)
+{
+	let goods = 0
+	for (let i = 0; i < total; i++)
+	{
+		let test_sudoku = get_sudoku_str(i)
+		if (test_solve(test_sudoku))
+			goods++
+	}
+	console.log(goods, " out of ", total)
+	
+}
+test_solve_all(20)
