@@ -51,6 +51,7 @@ export function sdk_copy(sdk_res, sdk_inp)
 			sdk_res[row][col] = sdk_inp[row][col];
 		}
 	}
+	console.log("::: ::: ::: copied: ", sdk_res)
 }
 	
 export function to_table(sudoku_str)

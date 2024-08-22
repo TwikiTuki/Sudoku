@@ -48,13 +48,8 @@ export function sdk_solve(sudoku)
 {
 	var unknown = [];
 	var	i;
-	let bkp_sudoku = sdk_blank();
-	let result = sdk_blank();
-	let solved = false;
 
 	
-	//sdk_copy(sudoku, orig_sudoku)
-
 	if (!sdk_check_initial_sudoku(sudoku))
 		return (null)
 	for (let row=0; row < N; row++)
@@ -80,27 +75,16 @@ export function sdk_solve(sudoku)
 				break;
 			unknown[i].value += 1;		
 		}
-		else if (i == (unknown.length - 1))
-		{
-			if (solved)
-				return (null)
-			//sdk_copy(reuslt, sudoku)
-			console.log("saved: ", result);
-			solved = true
-			i++
-		}
 		else
 			i++;
 	}
-	if (i < 0 && !solved)
+	if (i < 0)
 	{
 		console.log("What a pitie doesnt looks good: ");
 		return (null);
 	}
 	else
-		console.log("Congragts here is the solution: ");
-	console.log(" returning saved: ", result);
-	//sdk_copy(orig_sudoku, result)
+		console.log("Congrats here is the solution: ");
 	return (sudoku);
 }
 

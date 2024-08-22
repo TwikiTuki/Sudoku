@@ -39,7 +39,7 @@ function draw_sudoku(td_table, sudoku)
 
 function create_table(td_table, html_table, sudoku)
 {
-	console.log("creating tabler");
+	console.log("creating table");
 	for (let row=0; row<N; row++)
 	{
 		td_table[row] = [];
@@ -91,7 +91,6 @@ function generate_input(inpnum)
 addEventListener("DOMContentLoaded", (event) => {
 	var sudoku_ID = 0;
 	var sudoku = get_sudoku(sudoku_ID);
-	console.log("Hellow sudoku");
 	var inp_num = document.querySelector(".inpnum");
 	let html_table = document.querySelector("table");
 	var td_table = [];
@@ -104,7 +103,6 @@ addEventListener("DOMContentLoaded", (event) => {
 	generate_input(inp_num);
 	
 	document.querySelectorAll("button").forEach((button) =>{
-		console.log("foreaching");
 		if (button.classList.contains("solve"))
 		{
 			return ;
@@ -118,7 +116,6 @@ addEventListener("DOMContentLoaded", (event) => {
 	var solve_button = document.querySelector(".solve");
 	solve_button.addEventListener("click", (event) => {
 		console.log("Solve click");
-		sdk_solve(sudoku);
 		if (sdk_solve(sudoku) == null)
 		{
 			console.log("nice try");
@@ -126,7 +123,6 @@ addEventListener("DOMContentLoaded", (event) => {
 			header.classList.add("error");	
 		}
 		draw_sudoku(td_table, sudoku);
-		console.log("drawn shudoku");
 		global_customizing = false;
 		inp_num.style.display = "none";
 	});
@@ -185,4 +181,4 @@ function test_solve_all(total)
 	console.log(goods, " out of ", total)
 	
 }
-test_solve_all(20)
+//test_solve_all(20)
