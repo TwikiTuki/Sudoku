@@ -1,6 +1,6 @@
 ## Backtracking Sudoku
 
-I have really got inot the Sudoku wolrd the ammout of sudokus i have started without ever finishing them is way higner than the ones i have finshed. So in orther to try to compensate for it I implemented an algorithm that solves sudokus.
+I have never really got inot the Sudoku wolrd the ammout of sudokus i have started without ever finishing them is way higner than the ones i have finshed. So in orther to try to compensate for it I implemented an algorithm that solves sudokus.
 
 I have also created a basic interface to display some preloaded shudokus and display their solution. Is it also posible to edit the shudoku, and if you are commited enough you can cleare one an put a completly new one.
 
